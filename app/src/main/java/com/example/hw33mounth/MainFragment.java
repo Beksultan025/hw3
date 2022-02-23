@@ -13,7 +13,7 @@ import android.widget.Button;
 import android.widget.EditText;
 
 public class MainFragment extends Fragment {
-    private static final String KEY = "key1";
+    public static final String KEY = "key1";
     private EditText editText;
     private Button button;
 

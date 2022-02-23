@@ -13,7 +13,7 @@ import android.widget.Button;
 import android.widget.EditText;
 
 public class FiveFragment extends Fragment {
-    private static final String KEY = "key1";
+
     private EditText editText;
     private Button button;
 
@@ -29,14 +29,14 @@ public class FiveFragment extends Fragment {
         editText = view.findViewById(R.id.edit_text);
         button = view.findViewById(R.id.btn_go);
         Bundle chemodan = getArguments();
-        String text = chemodan.getString(KEY);
+        String text = chemodan.getString(MainFragment.KEY);
         editText.setText(text);
         button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Bundle chemodan = new Bundle();
                 String text = editText.getText().toString();
-                chemodan.putString(KEY, text);
+                chemodan.putString(MainFragment.KEY, text);
                 Fragment fragment = new FiveFragment();
                 fragment.setArguments(chemodan);
                 requireActivity().getSupportFragmentManager().beginTransaction().replace(R.id.container_main , fragment).commit();
